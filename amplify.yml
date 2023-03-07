@@ -12,6 +12,7 @@ frontend:
     # IMPORTANT - Please verify your build commands
     build:
       commands: 
+        - bundle exec rspec spec
   artifacts:
     # IMPORTANT - Please verify your build output directory
     baseDirectory: /
