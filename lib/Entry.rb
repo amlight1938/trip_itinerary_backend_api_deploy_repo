@@ -6,12 +6,12 @@ class Entry
             highlight_img_url: pHighlightImageURL, user_id: pUser_id)
         
         pActivities.each do |tmp_activity|
-            activity = Activity.create(trip_activity: tmp_activity, trip_id: trip.id)
+            activity = Activity.create(trip_activity: tmp_activity)
             trip.activities << activity
         end
 
         pImageURLs.each do |tmp_url|
-            url = Image.create(image_url: tmp_url, trip_id: trip.id)
+            url = Image.create(image_url: tmp_url)
             trip.images << url
         end
 
@@ -23,7 +23,7 @@ class Entry
             end
             
             if is_odd_iteration?(iteration)
-                itinerary = Itinerary.create(day_number: tmp, day_itinerary: row, trip_id: trip.id)
+                itinerary = Itinerary.create(day_number: tmp, day_itinerary: row)
                 trip.itineraries << itinerary
             end
 
